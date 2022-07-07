@@ -3,10 +3,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "yarn develop",
       "type": "pwa-chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "yarn: develop",
       "url": "http://localhost:4200/"
     },
     {
