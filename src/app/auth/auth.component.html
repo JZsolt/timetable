@@ -1,15 +1,32 @@
-<mat-form-field appearance="fill">
-  <mat-label>Input</mat-label>
-  <input matInput />
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Select</mat-label>
-  <mat-select>
-    <mat-option value="one">First option</mat-option>
-    <mat-option value="two">Second option</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Textarea</mat-label>
-  <textarea matInput></textarea>
-</mat-form-field>
+<div class="container mx-auto">
+  <div class="grid md:grid-cols-11 xl:grid-cols-9">
+    <div
+      class="md:col-start-4 lg:col-start-5 xl:col-start-4 md:col-end-10 lg:col-end-9 xl:col-end-7 flex"
+    >
+      <mat-card class="mt-5 min-w-full">
+        <mat-tab-group mat-stretch-tabs>
+          <mat-tab label="User">
+            <div class="block mt-5 px-3">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="block px-3">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="pb-5 px-3">
+              <button mat-raised-button color="primary" class="w-full">
+                SignIn
+              </button>
+            </div>
+          </mat-tab>
+          <mat-tab label="Admin"> Content 2 </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+    </div>
+  </div>
+</div>
