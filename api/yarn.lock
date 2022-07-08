@@ -1798,31 +1798,6 @@
     styled-components "5.3.3"
     whatwg-fetch "^3.6.2"
 
-"@strapi/helper-plugin@4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.2.2.tgz#8bdb9a82b391c10ce10ac3ee6b7013601092754c"
-  integrity sha512-ftamIWfwNal3ILu/BIVmaTj5wQRWHA3ie6K4z3hb2iok1EvrwcxoWyBz1hpbhXx3oyzYmk3UIzUyK77H6JQWuQ==
-  dependencies:
-    "@fortawesome/fontawesome-free" "^5.15.2"
-    "@fortawesome/fontawesome-svg-core" "^1.2.35"
-    "@fortawesome/free-brands-svg-icons" "^5.15.2"
-    "@fortawesome/free-solid-svg-icons" "^5.15.3"
-    "@fortawesome/react-fontawesome" "^0.1.14"
-    axios "0.25.0"
-    formik "2.2.9"
-    invariant "^2.2.1"
-    lodash "4.17.21"
-    match-sorter "^4.0.2"
-    moment "^2.29.1"
-    react "^17.0.2"
-    react-dom "^17.0.2"
-    react-helmet "^6.1.0"
-    react-intl "5.20.2"
-    react-router "^5.2.0"
-    react-router-dom "5.2.0"
-    styled-components "5.3.3"
-    whatwg-fetch "^3.6.2"
-
 "@strapi/icons@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.1.0.tgz#ce146ee6ce2098f97b15263aa502367945961f8a"
@@ -1869,13 +1844,13 @@
     reselect "^4.0.0"
     yup "^0.32.9"
 
-"@strapi/plugin-documentation@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-documentation/-/plugin-documentation-4.2.2.tgz#4b0b7abce8119eab9c2161e1eee647cdad57aa13"
-  integrity sha512-0j2aYNJ0ucWFvj7iEJCVfAt4c0/6UedGHvuVGVjt4lWl/DLL1rBgs8fO7Tbljwh43KLrlDtcaL92198ycTMxKw==
+"@strapi/plugin-documentation@4.1.11":
+  version "4.1.11"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-documentation/-/plugin-documentation-4.1.11.tgz#28848842c2b48148e63a9be67f8bb81876837709"
+  integrity sha512-B4DgIanoJO0I3HPvlt37hgARCgx2A/HZ+GP7tRho6YFn4V+78mfqcipjTP86mkVLH8hWgI5PIdDSTlZRlybEHw==
   dependencies:
-    "@strapi/helper-plugin" "4.2.2"
-    "@strapi/utils" "4.2.2"
+    "@strapi/helper-plugin" "4.1.11"
+    "@strapi/utils" "4.1.11"
     bcryptjs "2.4.3"
     cheerio "^1.0.0-rc.5"
     fs-extra "10.0.0"
@@ -1892,8 +1867,7 @@
     react-router-dom "5.2.0"
     redux "^4.0.1"
     reselect "^4.0.0"
-    swagger-ui-dist "4.11.1"
-    yaml "1.10.2"
+    swagger-ui-dist "3.47.1"
 
 "@strapi/plugin-email@4.1.11":
   version "4.1.11"
@@ -1904,7 +1878,7 @@
     "@strapi/utils" "4.1.11"
     lodash "4.17.21"
 
-"@strapi/plugin-graphql@^4.2.2":
+"@strapi/plugin-graphql@^4.1.11":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.2.2.tgz#608e6e9dfa4bf0c94cf5ba86fc5356fe7605ec91"
   integrity sha512-w1Imrzw402s5SIDo0ibR6VkpcPD0DD/CCxSBXbx9DGtMj54NmnFu94CtAJ5cLWYe6qk9ywGfT5c22MJNX1J3ww==
@@ -10298,10 +10272,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swagger-ui-dist@4.11.1:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.11.1.tgz#1e9c0e62bdac632f7b206c95ef9cbe986097606a"
-  integrity sha512-pf3kfSTYdF9mYFY2VnfJ51wnXlSVhEGdtymhpHzfbFw2jTbiEWgBoVz5EB9aW2EaJvUGTM1YHAXYZX7Jk4RdAQ==
+swagger-ui-dist@3.47.1:
+  version "3.47.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.47.1.tgz#03b214a40d61e417051879cdb4a96f9c6b518a38"
+  integrity sha512-7b9iHDC/GGC9SJLd3HiV/3EnsJ3wu7xN8Q4MpOPfQO8UG7TQFG2TMTDkvvy0SNeqxQY0tGQY0ppZC9a95tW3kg==
 
 swap-case@^1.1.0:
   version "1.1.2"
@@ -11179,7 +11153,7 @@ yallist@4.0.0, yallist@^4.0.0:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
-yaml@1.10.2, yaml@^1.7.2:
+yaml@^1.7.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
