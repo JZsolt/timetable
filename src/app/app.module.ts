@@ -8,14 +8,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { AuthComponent } from './auth/auth.component';
 
 import { MaterialModule } from 'src/app/material.module';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AuthComponent],
+  declarations: [AppComponent, HomeComponent, AuthComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

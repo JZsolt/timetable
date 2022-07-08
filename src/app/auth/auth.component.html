@@ -6,23 +6,72 @@
       <mat-card class="mt-5 min-w-full">
         <mat-tab-group mat-stretch-tabs>
           <mat-tab label="User">
-            <div class="block mt-5 px-3">
-              <mat-form-field class="w-full" appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput />
-              </mat-form-field>
-            </div>
-            <div class="block px-3">
-              <mat-form-field class="w-full" appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput />
-              </mat-form-field>
-            </div>
-            <div class="pb-5 px-3">
-              <button mat-raised-button color="primary" class="w-full">
-                SignIn
-              </button>
-            </div>
+            <form
+              class="pt-5"
+              #authForm="ngForm"
+              (ngSubmit)="onSubmit(authForm)"
+            >
+              <div *ngIf="!isLoginMode" class="block px-3">
+                <mat-form-field class="w-full" appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput ngModel name="name" required />
+                </mat-form-field>
+              </div>
+              <div class="block px-3">
+                <mat-form-field class="w-full" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput ngModel name="email" required email />
+                </mat-form-field>
+              </div>
+              <div class="block px-3">
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    ngModel
+                    name="password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                  >
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="px-3 mb-5 flex justify-center">
+                <mat-error *ngIf="error">
+                  <div class="flex items-center">
+                    <mat-icon class="mr-3">error</mat-icon>{{ error }}
+                  </div>
+                </mat-error>
+              </div>
+              <div class="pb-5 px-3">
+                <button
+                  type="submit"
+                  mat-raised-button
+                  color="primary"
+                  class="w-full"
+                  [disabled]="!authForm.form.valid"
+                >
+                  {{ isLoginMode ? "Login" : "Sign Up" }}
+                </button>
+                <div class="mt-5 flex justify-center">
+                  <mat-slide-toggle (click)="onSwitchMode()"
+                    >Switch to
+                    {{ !isLoginMode ? "Login" : "Sign Up" }}</mat-slide-toggle
+                  >
+                </div>
+              </div>
+            </form>
           </mat-tab>
           <mat-tab label="Admin"> Content 2 </mat-tab>
         </mat-tab-group>
