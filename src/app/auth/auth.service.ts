@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, Subject, tap, throwError } from 'rxjs';
+import { User } from 'src/app/auth/user.model';
 
 export interface AuthResponseData {
   jwt: string;
@@ -18,6 +19,8 @@ export interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  user = new Subject<User>();
+
   constructor(private http: HttpClient) {}
 
   signUp(username: string, email: string, password: string) {
@@ -27,7 +30,12 @@ export class AuthService {
         email: email,
         password: password,
       })
-      .pipe(catchError(this.handleErro));
+      .pipe(
+        catchError(this.handleErro),
+        tap((resData) => {
+          this.handleAuth(resData.jwt, resData.user);
+        })
+      );
   }
 
   logIn(email: string, password: string) {
@@ -36,7 +44,17 @@ export class AuthService {
         identifier: email,
         password: password,
       })
-      .pipe(catchError(this.handleErro));
+      .pipe(
+        catchError(this.handleErro),
+        tap((resData) => {
+          this.handleAuth(resData.jwt, resData.user);
+        })
+      );
+  }
+
+  private handleAuth(token: string, userObj: any) {
+    const user = new User(token, userObj);
+    this.user.next(user);
   }
 
   private handleErro(respError: HttpErrorResponse) {
