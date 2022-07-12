@@ -1,3 +1,28 @@
-<p>header works!</p>
-<a routerLink="/auth">SignIn/LogIn</a>
-<a *ngIf="isAutenticated">LogOut</a>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/">My App</a>
+  <a routerLink="/spreadsheet">Spreadsheet</a>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>share</mat-icon>
+  </button>
+  <a *ngIf="!isAutenticated" routerLink="/auth">SignIn/LogIn</a>
+  <a *ngIf="isAutenticated" (click)="onLogOut()">LogOut</a>
+</mat-toolbar>

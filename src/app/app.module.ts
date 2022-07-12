@@ -10,10 +10,12 @@ import { AuthComponent } from './auth/auth.component';
 import { MaterialModule } from 'src/app/material.module';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from 'src/app/auth/auth-interceptor.service';
+import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AuthComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, AuthComponent, HeaderComponent, SpreadsheetComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
