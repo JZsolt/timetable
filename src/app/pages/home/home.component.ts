@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('home component');
+    const tmpFile = new File(['TEST'], '/src/locale/test.json');
+
     this.authService.user.subscribe((user) => {
       if (user) {
         this.http

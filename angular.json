@@ -4,6 +4,10 @@
   "newProjectRoot": "projects",
   "projects": {
     "timetable": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": { "hu": "src/locale/messages.hu.json" }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -33,6 +37,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["hu"],
             "outputPath": "dist/timetable",
             "index": "src/index.html",
             "main": "src/main.ts",

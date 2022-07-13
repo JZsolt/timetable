@@ -62,7 +62,10 @@
                   class="w-full"
                   [disabled]="!authForm.form.valid"
                 >
-                  {{ isLoginMode ? "Login" : "Sign Up" }}
+                  <ng-container *ngIf="isLoginMode" i18n="@@login"
+                    >Login</ng-container
+                  >
+                  <ng-container *ngIf="!isLoginMode">Sign Up</ng-container>
                 </button>
                 <div class="mt-5 flex justify-center">
                   <mat-slide-toggle (click)="onSwitchMode()"

@@ -23,6 +23,12 @@
   >
     <mat-icon>share</mat-icon>
   </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">{{ selectedLangName }}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="selectedLang($event)">Item 1</button>
+    <button mat-menu-item (click)="selectedLang($event)">Item 2</button>
+  </mat-menu>
   <a *ngIf="!isAutenticated" routerLink="/auth">SignIn/LogIn</a>
   <a *ngIf="isAutenticated" (click)="onLogOut()">LogOut</a>
 </mat-toolbar>

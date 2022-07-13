@@ -8,7 +8,9 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  console = console;
   isAutenticated = false;
+  selectedLangName = 'en';
   private userSub: Subscription;
 
   constructor(private authService: AuthService) {}
@@ -25,5 +27,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
+  }
+
+  selectedLang(event) {
+    this.selectedLangName = event.target.innerText;
   }
 }
